@@ -18,6 +18,7 @@ data_transforms =  transforms.Compose([
             transforms.Normalize([0.5,0.5,0.5], [0.5,0.5,0.5])])
 
 net = simpleconv3()
+net.eval()
 modelpath = sys.argv[1]
 net.load_state_dict(torch.load(modelpath,map_location=lambda storage,loc: storage))
 
